@@ -11,7 +11,7 @@ const routes = [{
         component: ProductList
     },
     {
-        path: '/cart,',
+        path: '/cart',
         component: Cart
     },
 ];
