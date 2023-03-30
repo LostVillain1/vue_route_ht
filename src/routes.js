@@ -7,6 +7,10 @@ import ProductList from './components/ProductList'
 import Cart from './components/Cart'
 
 const routes = [{
+        path: '', //main page
+        component: ProductList
+    },
+    {
         path: '/products',
         component: ProductList
     },
@@ -14,6 +18,10 @@ const routes = [{
         path: '/cart',
         component: Cart
     },
+    {
+        path: '*', //для всех роутов, которые не совпадают с перечнем выше(т.е ошибку выводить, например)
+        component: Cart
+    }
 ];
 
 export const router = new VueRouter({
