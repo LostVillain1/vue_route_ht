@@ -9,8 +9,12 @@ export default {
         }
     },
     mutations: {
-        add(state, id_product) {
+        addProduct(state, id_product) {
             state.products.push(id_product);
+        },
+        removeProduct(state, id_product) {
+
+            state.products.p
         }
     },
     actions: {

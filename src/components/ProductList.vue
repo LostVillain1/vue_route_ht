@@ -8,7 +8,13 @@
                 <img class="card-img-top" :src="product.photo" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{product.model}}</h5>
-                    <a href="" class="btn btn-primary">Order</a>
+                    <div class="card__buttons">
+                        <a href="" class="btn btn-primary"
+                        @click.prevent="addProduct(product.id)">
+                            Order
+                        </a>
+                        <button type="button" class="btn btn-danger">Remove</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -18,6 +24,7 @@
 
 <script>
     import { mapGetters } from 'vuex';
+    import { mapMutations } from 'vuex'
 
     export default {
         computed: {
@@ -27,6 +34,11 @@
             })
         },
         methods: {
+            ...mapMutations('cart', 
+            {
+                addProduct: 'addProduct',
+                removeProduct: 'removeProduct'
+            })
         }
     }
 </script>
@@ -45,5 +57,10 @@
     .card {
         
         width: 18rem
+    }
+
+    .card__buttons {
+        display: flex;
+        justify-content: space-between
     }
 </style>

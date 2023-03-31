@@ -2,9 +2,15 @@
   <div id="app">
     <div class="content">
       <div class="navigation">
-        <div class="nav__item">CART</div>
-        <div class="nav__item">PRODUCTS</div>
-        <div class="nav__item">INFO</div>
+        <div class="nav__item">
+          <router-link to="/cart" tag="a">CART</router-link>
+        </div>
+        <div class="nav__item">
+          <router-link to="/products" tag="a">PRODUCTS</router-link>
+        </div>
+        <div class="nav__item">
+          <router-link to="/products" tag="a">INFO</router-link>
+        </div>
       </div>
       <router-view />
     </div>
@@ -26,7 +32,12 @@ export default {
 
 
 <style scoped>
+
+  a {
+    text-decoration: none
+  }
   .content {
+    height: 100vh;
     display:flex;
     flex-direction:row;
     gap: 50px;
@@ -34,7 +45,10 @@ export default {
   }
 
   .navigation {
+    height: 100%;
     margin-left: 10px;
+    padding-right: 20px;
+    border-right: solid
   }
 
   .nav__item {
