@@ -7,13 +7,17 @@
                 class="card">
                 <img class="card-img-top" :src="product.photo" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">{{product.model}}</h5>
+                    <router-link :to="{ name: 'product', params: { id: product.id } }"><h5 class="card-title">{{product.model}}</h5></router-link>
                     <div class="card__buttons">
                         <a href="" class="btn btn-primary"
-                        @click.prevent="addProduct(product.id)">
+                        @click.prevent="addProduct(product)">
                             Order
                         </a>
-                        <button type="button" class="btn btn-danger">Remove</button>
+                        <button type="button"
+                                class="btn btn-danger"
+                                @click="removeProduct(product)">
+                            Remove
+                        </button>
                     </div>
                 </div>
             </div>

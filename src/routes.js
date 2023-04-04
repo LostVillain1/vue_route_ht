@@ -5,6 +5,7 @@ Vue.use(VueRouter);
 
 import ProductList from './components/ProductList'
 import Cart from './components/Cart'
+import Product from './components/Product'
 
 const routes = [{
         path: '', //main page
@@ -12,10 +13,18 @@ const routes = [{
     },
     {
         path: '/products',
+        name: 'products',
         component: ProductList
     },
     {
+        path: '/products/:id',
+        name: 'product',
+        component: Product,
+        props: true
+    },
+    {
         path: '/cart',
+        name: 'cart',
         component: Cart
     },
     {

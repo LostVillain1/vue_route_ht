@@ -1,15 +1,25 @@
 <template>
-  <div class="hello">
+  <div class="cart">
     <h1>Корзина</h1>
     <h2>У вас в корзине сейчас следующие товары:</h2>
+    {{ amountOfUniqueProducts }}
   </div>
 </template>
 
 <script>
+
+import { mapGetters } from 'vuex';
+
 export default {
   props: {
     msg: String
-  }
+  },
+  computed: {
+    ...mapGetters('cart', 
+    {
+        amountOfUniqueProducts: 'amountOfUniqueProducts',
+    })
+  },  
 }
 </script>
 

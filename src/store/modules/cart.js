@@ -6,15 +6,28 @@ export default {
     getters: {
         products(state) {
             return state.products
+        },
+        productsAmount(state) {
+            return state.products.length
+        },
+        amountOfUniqueProducts(state) {
+            const assocProducts = {};
+            state.products.forEach(function(product) {
+                assocProducts[product.model] = (assocProducts[product.model] || 0) + 1;
+            });
+            return assocProducts
         }
     },
     mutations: {
-        addProduct(state, id_product) {
-            state.products.push(id_product);
+        addProduct(state, product) {
+            state.products.push(product);
         },
-        removeProduct(state, id_product) {
+        removeProduct(state, product) {
+            const itemIndex = state.products.indexOf(product);
+            if (itemIndex > -1) {
+                state.products.splice(itemIndex, 1);
+            }
 
-            state.products.p
         }
     },
     actions: {
