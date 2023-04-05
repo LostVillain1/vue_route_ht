@@ -13,7 +13,7 @@ export default {
         amountOfUniqueProducts(state) {
             const assocProducts = {};
             state.products.forEach(function(product) {
-                assocProducts[product.model] = (assocProducts[product.model] || 0) + 1;
+                assocProducts[product.id] = (assocProducts[product.id] || 0) + 1;
             });
             return assocProducts
         }
@@ -27,7 +27,6 @@ export default {
             if (itemIndex > -1) {
                 state.products.splice(itemIndex, 1);
             }
-
         }
     },
     actions: {

@@ -13,12 +13,15 @@
 
 export default {
   name: 'Product',
+  props: ['id'],
   computed: {
     product() {
-        return this.$store.getters['products/product'](this.productId)
-    },
+        return this.$store.getters['products/product'](this.id)
+    }, 
+  },
+  watch: {
     productId() {
-        return this.$route.params.id
+        console.log(typeof(this.productId))
     }
   }
 }

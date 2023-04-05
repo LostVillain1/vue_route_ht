@@ -6,6 +6,7 @@ Vue.use(VueRouter);
 import ProductList from './components/ProductList'
 import Cart from './components/Cart'
 import Product from './components/Product'
+import E404 from './components/E404'
 
 const routes = [{
         path: '', //main page
@@ -17,7 +18,7 @@ const routes = [{
         component: ProductList
     },
     {
-        path: '/products/:id',
+        path: '/product/:id',
         name: 'product',
         component: Product,
         props: true
@@ -29,7 +30,7 @@ const routes = [{
     },
     {
         path: '*', //для всех роутов, которые не совпадают с перечнем выше(т.е ошибку выводить, например)
-        component: Cart
+        component: E404
     }
 ];
 

@@ -9,7 +9,7 @@
           <router-link to="/products" tag="a">PRODUCTS</router-link>
         </div>
         <div class="nav__item">
-          <router-link to="/products" tag="a">INFO</router-link>
+          <router-link to="/Error" tag="a">INFO</router-link>
         </div>
       </div>
       <div class="products">

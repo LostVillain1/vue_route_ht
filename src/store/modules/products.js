@@ -26,7 +26,7 @@ export default {
             return state.products
         },
         product: (state) => (id) => {
-            const [product] = state.products.filter(product => product.id === id);
+            const [product] = state.products.filter(product => product.id === +id);
             return product
         }
     },
